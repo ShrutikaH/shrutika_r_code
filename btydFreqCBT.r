@@ -7,13 +7,13 @@
 
 ################################################################ 
 
-#INSTALLING and SETTING WORKING DIRECTORY
+        #INSTALLING and SETTING WORKING DIRECTORY
 
 ################################################################ 
 
 rm(list=ls())
 
-setwd("/Users/ShrutikaHalaharvi/Desktop/btyd_sales/") # Set your directory
+setwd("") # Set your directory
 
 toInstallCandidates <- c("ggplot2", "BTYD", "reshape2", "plyr", "lubridate")
 # check if pkgs are already present
@@ -25,7 +25,7 @@ lapply(toInstallCandidates, library, character.only = TRUE)
 
 ################################################################ 
 
-#LOAD DATA
+                #LOAD DATA
 
 ################################################################  
 
@@ -49,7 +49,7 @@ summary(elog)  # no NAs
 
 ################################################################ 
 
-#EXAMINE DATA
+          #EXAMINE DATA
 
 ################################################################  
 
@@ -78,9 +78,10 @@ time.btw.purchases.days <- windows();ggplot(purchaseFreq,aes(x=daysBetween))+
   theme_minimal()
 summary(purchaseFreq)
 sum(elog$sales)
+
 ################################################################ 
 
-#DIVIDE DATA 
+      #DIVIDE DATA 
 
 ################################################################  
 
@@ -116,7 +117,7 @@ str(cal2.cbs)
 
 ################################################################ 
 
-# ESTIMATE PARAMETERS FOR THE MODEL
+        # ESTIMATE PARAMETERS FOR THE MODEL
 
 ################################################################ 
 
@@ -153,7 +154,7 @@ p.matrix # for data set. Yes, it converges
 
 ################################################################ 
 
-# PLOT LOG-LIKELIHOOD ISO-CONTOURS FOR MAIN PARAMS
+      # PLOT LOG-LIKELIHOOD ISO-CONTOURS FOR MAIN PARAMS
 
 ################################################################
 
@@ -167,7 +168,7 @@ dc.PlotLogLikelihoodContours(pnbd.cbs.LL, params2, cal.cbs = cal2.cbs , n.divs =
                              allow.neg.params = FALSE, param.names = param.names) 
 ################################################################ 
 
-# PLOT GROUP DISTRIBUTION OF PROPENSITY TO PURCHASE, DROPOUT
+      # PLOT GROUP DISTRIBUTION OF PROPENSITY TO PURCHASE, DROPOUT
 
 ################################################################ 
 
@@ -215,7 +216,7 @@ pnbd.ConditionalExpectedTransactions(params2, T.star = 52, # weeks
 
 ################################################################ 
 
-# PROBABILITY A CUSTOMER IS ALIVE AT END OF CALIBRATION / TRAINING 
+      # PROBABILITY A CUSTOMER IS ALIVE AT END OF CALIBRATION / TRAINING 
 
 ################################################################ 
 
@@ -241,7 +242,7 @@ pnbd.PlotFrequencyInCalibration(params2, cal2.cbs,
 
 ################################################################ 
 
-# HOW WELL DOES MODEL DO IN HOLDOUT PERIOD?
+      # HOW WELL DOES MODEL DO IN HOLDOUT PERIOD?
 
 ################################################################ 
 
@@ -301,7 +302,7 @@ comparisonByWeek <- pnbd.PlotTrackingInc(params2, T.cal,
 
 ################################################################ 
 
-#FORMAL MEASURE OF ACCURARY 
+      #FORMAL MEASURE OF ACCURARY 
 
 ################################################################ 
 
